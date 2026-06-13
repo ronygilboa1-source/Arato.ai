@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arato.ai · BDR Exercise — Part 1</title>
+<title>Arato.ai · BDR Home Assignment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -109,6 +109,8 @@
   .persona:hover{transform:translateX(8px);border-color:var(--green-100)}
   .persona .rank{font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--green-100);line-height:1;min-width:54px;-webkit-text-stroke:1px var(--green);}
   .persona .ptitle{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.2vw,1.55rem);letter-spacing:-.02em}
+  .persona .preason{font-size:.9rem;color:var(--muted);line-height:1.5;margin-top:6px}
+  .persona .ptitle-wrap{display:flex;flex-direction:column;gap:2px}
   .persona:hover .rank{color:var(--green)}
 
   /* ---------- Prospects ---------- */
@@ -135,6 +137,8 @@
   .pc-meta span b{color:var(--green-700)}
   .pc-stage{font-size:.92rem;color:var(--ink-soft);line-height:1.55}
   .pc-stage strong{color:var(--ink);font-weight:700}
+  .pc-stage-label{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px}
+  .pc-stage .pc-src{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--green-700);background:var(--green-50);border:1px solid var(--green-100);padding:2px 9px;border-radius:100px;margin-left:6px;white-space:nowrap}
   .pc-right{padding:30px 32px;display:flex;flex-direction:column}
   .pc-block-label{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
   .contact{display:flex;align-items:center;gap:14px;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--line)}
@@ -145,6 +149,21 @@
   .contact .li:hover{background:var(--green);color:#fff}
   .why .pc-block-label{margin-bottom:8px}
   .why p{font-size:.96rem;color:var(--ink-soft);line-height:1.6}
+
+  /* ---------- Research ---------- */
+  .research-grid{margin-top:32px;display:flex;flex-direction:column;gap:20px}
+  .rcard{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px 32px;box-shadow:var(--shadow)}
+  .rcard h3{font-family:var(--display);font-weight:700;font-size:1.4rem;letter-spacing:-.02em;display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .rcard h3 .pn{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--green);color:#fff;font-family:var(--display);font-weight:800;font-size:1rem}
+  .rblock{margin-bottom:18px}
+  .rblock:last-child{margin-bottom:0}
+  .rblock .rb-label{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-700);margin-bottom:10px}
+  .rblock ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .rblock li{font-size:.92rem;color:var(--ink-soft);line-height:1.6;padding-left:18px;position:relative}
+  .rblock li::before{content:"›";color:var(--green);position:absolute;left:0;font-weight:700}
+  .src{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--green-700);background:var(--green-50);border:1px solid var(--green-100);padding:2px 9px;border-radius:100px;margin-left:6px;white-space:nowrap}
+  .src a{color:var(--green-700);text-decoration:none}
+  .src a:hover{text-decoration:underline}
 
   /* ---------- Outreach ---------- */
   .outreach-intro{display:flex;align-items:baseline;gap:14px;margin-top:14px;flex-wrap:wrap}
@@ -181,6 +200,61 @@
   .asset-col.mkt .asset-list li .ico{background:rgba(255,255,255,.2)}
   .asset-col.prd .asset-list li .ico{background:var(--green-50);color:var(--green-700)}
 
+  /* ---------- Part 2 Deck ---------- */
+  .deck-divider{padding:0 0 8px}
+  .deck-section{margin-top:32px;display:flex;flex-direction:column;gap:24px}
+  .dcard{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:36px 38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .dcard::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg,var(--green),#86d98a)}
+  .dcard .dnum{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green-700);margin-bottom:10px}
+  .dcard h3{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.02em;margin-bottom:6px}
+  .dcard .dsub{font-size:.95rem;color:var(--muted);margin-bottom:26px}
+  .dcard-body{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+  @media(max-width:780px){.dcard-body{grid-template-columns:1fr}}
+  .dcard-body.cols3{grid-template-columns:1fr 1fr 1fr}
+  @media(max-width:780px){.dcard-body.cols3{grid-template-columns:1fr}}
+  .dbullets{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .dbullets li{display:flex;gap:14px;font-size:.96rem;line-height:1.55}
+  .dbullets li .dico{flex:none;width:28px;height:28px;border-radius:8px;background:var(--green-50);color:var(--green-700);display:grid;place-items:center;font-size:.95rem;margin-top:1px}
+  .dbullets strong{color:var(--ink);font-weight:700}
+  .dpanel{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .dpanel h4{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .dstat{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .dstat:last-child{border-bottom:none}
+  .dstat .dval{font-family:var(--display);font-weight:700;color:var(--green-700);font-size:1.05rem}
+  .dlifecycle-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .dlifecycle-card .dico-big{width:38px;height:38px;border-radius:10px;background:var(--green-50);color:var(--green-700);display:grid;place-items:center;margin-bottom:14px;font-size:1.1rem}
+  .dlifecycle-card .dstep-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .dlifecycle-card .dstep-name{font-family:var(--display);font-weight:700;font-size:1.15rem;margin-bottom:8px}
+  .dlifecycle-card p{font-size:.86rem;color:var(--muted);line-height:1.55}
+  .dwho{background:var(--green-50);border:1px solid var(--green-100);border-radius:14px;padding:18px 22px;margin-bottom:26px}
+  .dwho h4{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-700);margin-bottom:8px}
+  .dwho p{font-size:.9rem;color:var(--ink-soft);line-height:1.6}
+  .trust-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .trust-pills span{font-size:.78rem;font-weight:600;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:8px}
+  .logo-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+  .logo-pill{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 20px;font-family:var(--display);font-weight:700;font-size:1rem;color:var(--ink-soft);box-shadow:var(--shadow)}
+  .logo-pill .ldot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+
+  /* Before/After table */
+  .ba-table{width:100%;border-collapse:collapse;font-size:.92rem}
+  .ba-table th{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 0 14px;font-weight:600}
+  .ba-table th.ba-after{color:var(--green-700)}
+  .ba-table td{padding:12px 0;border-top:1px solid var(--line);vertical-align:top}
+  .ba-table td.ba-metric{color:var(--ink-soft);font-weight:600;padding-right:16px;white-space:nowrap}
+  .ba-table td.ba-before{color:var(--muted)}
+  .ba-table td.ba-after-val{font-family:var(--display);font-weight:700;color:var(--green-700);font-size:.95rem;line-height:1.4}
+  .dnext{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .dnext li{display:flex;gap:14px;font-size:.96rem;align-items:flex-start;color:var(--ink-soft)}
+  .dnext .dbadge{flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:.75rem;font-weight:700}
+  .dcta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .dcta{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:600;font-size:.92rem;padding:13px 26px;border-radius:10px;text-decoration:none;transition:background .2s}
+  .dcta:hover{background:var(--green-700)}
+  .dcta.sec{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+  .dcta.sec:hover{border-color:var(--green)}
+  .dnotes{margin-top:28px;padding-top:22px;border-top:1px dashed var(--line)}
+  .dnotes h4{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-700);margin-bottom:10px}
+  .dnotes p{font-size:.88rem;color:var(--muted);line-height:1.7}
+
   /* ---------- Footer ---------- */
   footer{padding:60px 0 50px;border-top:1px solid var(--line);background:var(--paper)}
   .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -203,6 +277,7 @@
     <a href="#prospects">Prospects</a>
     <a href="#outreach">Outreach</a>
     <a href="#assets">Assets</a>
+    <a href="#deck">Part 2</a>
     <a href="#top" class="nav-tag">Part 1</a>
   </div>
 </nav>
@@ -215,13 +290,12 @@
     <span class="grid"></span>
   </div>
   <div class="wrap">
-    <div class="hero-kicker reveal">Business Development Representative · Exercise</div>
+    <div class="hero-kicker reveal">Business Development Representative · Home Assignment</div>
     <h1 class="reveal">Strategic Prospecting &amp; <em>Value Proposition</em></h1>
-    <p class="hero-sub reveal">Generating five highly qualified leads for <b>Arato&nbsp;Simulate</b> — defining the ideal customer, the people who buy, the companies to chase, and how to reach them.</p>
     <div class="hero-meta reveal">
       <div class="item"><div class="k">Prepared by</div><div class="v">Rony Gilboa</div></div>
       <div class="item"><div class="k">Date</div><div class="v">June 14, 2026</div></div>
-      <div class="item"><div class="k">Scope</div><div class="v">Part 1 — Prospecting</div></div>
+      <div class="item"><div class="k">Scope</div><div class="v">Part 1, Prospecting</div></div>
     </div>
   </div>
 </header>
@@ -230,13 +304,16 @@
 <section id="icp" class="wrap">
   <div class="eyebrow reveal"><span class="num">01</span> Ideal Customer Profile</div>
   <h2 class="sec-title reveal">Arato.ai's ICP</h2>
-  <p class="sec-lead reveal">Three company profiles — by industry, size, and stage of AI adoption — that stand to gain the most immediate value from Arato Simulate.</p>
+  <p class="sec-lead reveal">Three company profiles, by industry, size, and stage of AI adoption, that stand to gain the most immediate value from Arato Simulate.</p>
 
   <div class="icp-grid">
     <article class="icp-card reveal">
       <span class="bar"></span>
       <span class="badge">1</span>
-      <div class="icp-industry">Website / SaaS platform</div>
+      <div class="icp-row" style="margin-top:0;padding-top:0;border-top:none">
+        <span class="label">Industry</span>
+        <div class="icp-industry">Website / SaaS platform</div>
+      </div>
       <div class="icp-row"><span class="label">Size</span><span class="size">1,000–25,000+</span> <span style="color:var(--muted);font-size:.9rem">employees</span></div>
       <div class="icp-row"><span class="label">Stage of AI adoption</span><span class="stage">Late-stage / mature companies that are already ready to deploy consumer-facing AI agents to their clients.</span></div>
     </article>
@@ -244,17 +321,23 @@
     <article class="icp-card reveal">
       <span class="bar"></span>
       <span class="badge">2</span>
-      <div class="icp-industry">Financial services / Banking</div>
-      <div class="icp-row"><span class="label">Size</span><span class="size">1,000+</span> <span style="color:var(--muted);font-size:.9rem">employees · target the AI / ML engineering unit within the enterprise</span></div>
-      <div class="icp-row"><span class="label">Stage of AI adoption</span><span class="stage"><strong>Advanced.</strong> Mature AI already embedded in production, with active investment in generative AI across regulated, high-stakes workflows.</span></div>
+      <div class="icp-row" style="margin-top:0;padding-top:0;border-top:none">
+        <span class="label">Industry</span>
+        <div class="icp-industry">Financial services / Banking</div>
+      </div>
+      <div class="icp-row"><span class="label">Size</span><span class="size">1,000+</span> <span style="color:var(--muted);font-size:.9rem">employees</span></div>
+      <div class="icp-row"><span class="label">Stage of AI adoption</span><span class="stage">Late-stage / mature companies that are already ready to deploy consumer-facing AI agents to their clients.</span></div>
     </article>
 
     <article class="icp-card reveal">
       <span class="bar"></span>
       <span class="badge">3</span>
-      <div class="icp-industry">Healthcare / Insurance</div>
+      <div class="icp-row" style="margin-top:0;padding-top:0;border-top:none">
+        <span class="label">Industry</span>
+        <div class="icp-industry">Healthcare / Insurance</div>
+      </div>
       <div class="icp-row"><span class="label">Size</span><span class="size">500–5,000+</span> <span style="color:var(--muted);font-size:.9rem">employees</span></div>
-      <div class="icp-row"><span class="label">Stage of AI adoption</span><span class="stage"><strong>Advanced.</strong> AI in production for high-stakes clinical and underwriting decisions, with active, ongoing ML investment.</span></div>
+      <div class="icp-row"><span class="label">Stage of AI adoption</span><span class="stage">Late-stage / mature companies that are already ready to deploy consumer-facing AI agents to their clients.</span></div>
     </article>
   </div>
 </section>
@@ -263,12 +346,12 @@
 <section id="personas" class="wrap">
   <div class="eyebrow reveal"><span class="num">02</span> Target Persona Identification</div>
   <h2 class="sec-title reveal">The three people<br>who decide</h2>
-  <p class="sec-lead reveal">The top decision-maker and influencer personas for the most promising profile — <strong style="color:var(--ink)">ICP&nbsp;3: Healthcare&nbsp;/&nbsp;Insurance</strong>, where customer-facing AI makes high-stakes decisions and reliability is non-negotiable.</p>
+  <p class="sec-lead reveal">The top decision-maker and influencer personas for the most promising profile, <b>ICP 3: Healthcare / Insurance</b>, where customer-facing AI makes high-stakes decisions and reliability is non-negotiable.</p>
 
   <div class="persona-list">
-    <div class="persona reveal"><span class="rank">1</span><span class="ptitle">VP / Head of AI · Director of AI Engineering</span></div>
-    <div class="persona reveal"><span class="rank">2</span><span class="ptitle">Head of Product · VP Product (AI Products)</span></div>
-    <div class="persona reveal"><span class="rank">3</span><span class="ptitle">Head of Risk &amp; Compliance</span></div>
+    <div class="persona reveal"><span class="rank">1</span><div class="ptitle-wrap"><span class="ptitle">VP / Head of AI · Director of AI Engineering</span><span class="preason">Owns the technical side of the AI feature itself, including how it's built, trained, and deployed.</span></div></div>
+    <div class="persona reveal"><span class="rank">2</span><div class="ptitle-wrap"><span class="ptitle">Head of Product · VP Product (AI Products)</span><span class="preason">Owns the product and its features from a broader perspective, beyond the technical implementation.</span></div></div>
+    <div class="persona reveal"><span class="rank">3</span><div class="ptitle-wrap"><span class="ptitle">Head of QA / VP QA</span><span class="preason">Ultimately owns the pain when AI fails in production, making them highly relevant. Arato saves them time and makes their work more precise.</span></div></div>
   </div>
 </section>
 
@@ -294,7 +377,8 @@
         <div class="pc-left">
           <div class="pc-head"><span class="pn">1</span><span class="pc-company">Workday</span></div>
           <div class="pc-meta"><span><b>Industry</b> · HR &amp; Finance SaaS</span><span><b>Size</b> · 24K employees</span></div>
-          <p class="pc-stage"><strong>Mature / Advanced.</strong> Built-in AI platform (Workday AI &amp; Illuminate), with active investment in generative AI and embedded ML across HR and finance workflows.</p>
+          <span class="pc-stage-label">Stage of AI Adoption</span>
+          <p class="pc-stage">Illuminate moved from "assistive" AI in 2024 to fully agentic AI agents by early 2026, now automating performance reviews, workforce planning, and financial close. <span class="pc-src">Workday FY2026 Annual Report</span></p>
         </div>
         <div class="pc-right">
           <div class="contact">
@@ -302,7 +386,7 @@
             <div><div class="cname">Akash Kapoor</div><div class="ctitle">Sr. Director, AI Product Management</div></div>
             <a class="li" href="https://www.linkedin.com/in/akashkapoor9/" target="_blank" rel="noopener">in ↗</a>
           </div>
-          <div class="why"><div class="pc-block-label">Why they're a good fit</div><p>Workday is investing heavily in AI across its products. As it builds and launches more AI features, it needs a reliable way to test, manage, and improve them — Arato.ai can help ensure these features work as expected before they reach customers.</p></div>
+          <div class="why"><div class="pc-block-label">Why they're a good fit</div><p>Workday is investing heavily in AI across its products. As it builds and launches more AI features, it needs a reliable way to test, manage, and improve them. Arato.ai can help ensure these features work as expected before they reach customers.</p></div>
         </div>
       </div>
     </article>
@@ -313,7 +397,8 @@
         <div class="pc-left">
           <div class="pc-head"><span class="pn">2</span><span class="pc-company">Maccabi Healthcare</span></div>
           <div class="pc-meta"><span><b>Industry</b> · Healthcare / Health Insurance</span><span><b>Size</b> · 3K employees</span></div>
-          <p class="pc-stage"><strong>Advanced.</strong> Pioneer in healthcare AI; uses predictive analytics, early disease detection, and ML-driven patient care. Strong data assets from millions of digital health records.</p>
+          <span class="pc-stage-label">Stage of AI Adoption</span>
+          <p class="pc-stage">Extended its AI-powered prescription co-pilot contract for 6 more years and is rolling out home hospitalization and medical IoT monitoring. <span class="pc-src">InvestingNews / Digitalisation World, 2025</span></p>
         </div>
         <div class="pc-right">
           <div class="contact">
@@ -332,7 +417,8 @@
         <div class="pc-left">
           <div class="pc-head"><span class="pn">3</span><span class="pc-company">Monday.com</span></div>
           <div class="pc-meta"><span><b>Industry</b> · Work Management / SaaS</span><span><b>Size</b> · 3.5K employees</span></div>
-          <p class="pc-stage"><strong>Advanced.</strong> Actively launching "monday AI" features, AI blocks, automations, and AI assistants — embedded across its platform, with strong generative AI investment.</p>
+          <span class="pc-stage-label">Stage of AI Adoption</span>
+          <p class="pc-stage">By 2026, Sidekick exited beta, Vibe and MCP went live, and the roadmap now adds enterprise-grade AI governance and credit-based pricing. <span class="pc-src">monday.com AI Roadmap, 2026</span></p>
         </div>
         <div class="pc-right">
           <div class="contact">
@@ -351,7 +437,8 @@
         <div class="pc-left">
           <div class="pc-head"><span class="pn">4</span><span class="pc-company">Citibank</span></div>
           <div class="pc-meta"><span><b>Industry</b> · Financial Services / Global Banking</span><span><b>Size</b> · 180K employees</span></div>
-          <p class="pc-stage"><strong>Advanced / Enterprise.</strong> Citi invests heavily in AI for fraud detection, risk, compliance, and generative AI tools.</p>
+          <span class="pc-stage-label">Stage of AI Adoption</span>
+          <p class="pc-stage">AI already drives AML detection, transaction monitoring, and "model risk governance," with 2026 plans for reasoning-capable agentic AI. <span class="pc-src">Citi Ventures / DigitalDefynd, 2025-26</span></p>
         </div>
         <div class="pc-right">
           <div class="contact">
@@ -370,7 +457,8 @@
         <div class="pc-left">
           <div class="pc-head"><span class="pn">5</span><span class="pc-company">Lemonade</span></div>
           <div class="pc-meta"><span><b>Industry</b> · Insurance</span><span><b>Size</b> · 1,400 employees</span></div>
-          <p class="pc-stage"><strong>Advanced / AI-native.</strong> Lemonade's core business runs on AI — chatbots Maya &amp; Jim handle quotes and claims, and ML drives underwriting, pricing, and fraud detection.</p>
+          <span class="pc-stage-label">Stage of AI Adoption</span>
+          <p class="pc-stage">As of year-end 2025, 96% of claims are first-handled by AI Jim with zero human intervention, and 55% are fully automated end-to-end. <span class="pc-src">Lemonade 10-Q / Perspective AI, 2026</span></p>
         </div>
         <div class="pc-right">
           <div class="contact">
@@ -385,6 +473,7 @@
 
   </div>
 </section>
+
 
 <!-- OUTREACH -->
 <section id="outreach" class="wrap">
@@ -404,9 +493,9 @@
           <div class="msg-subject"><b>Subject:</b> Stress-testing Maya &amp; Jim before your customers do</div>
           <div class="msg-text">Hi Hemi,
 
-With Maya and Jim handling quotes and claims at scale, a single off-tone or inaccurate response can reach thousands of customers — and a wrong underwriting decision carries real cost.
+With Maya and Jim handling quotes and claims at scale, a single off-tone or inaccurate response can reach thousands of customers, and a wrong underwriting decision carries real cost.
 
-Arato.ai just launched "Arato Simulate": it runs thousands of realistic conversations against your AI to surface failures before customers do — no integration needed.
+Arato.ai just launched "Arato Simulate": it runs thousands of realistic conversations against your AI to surface failures before customers do, with no integration needed.
 
 <span class="q">How are you stress-testing Maya and Jim today?</span>
 
@@ -423,7 +512,7 @@ Rony</div>
           <span class="msg-limit">max 30 words</span>
         </div>
         <div class="msg-body">
-          <div class="msg-text">Hi Hemi, Daniel Schreiber mentioned you as the right person for product quality at Lemonade. Would love to connect and share how "Arato Simulate" helps improve AI quality before production.</div>
+          <div class="msg-text">Hi Hemi, I believe Daniel Schreiber would point me to you as the right person for product quality at Lemonade. Would love to connect and share how "Arato Simulate" helps.</div>
         </div>
       </div>
     </div>
@@ -464,7 +553,7 @@ Rony</div>
       <ul class="asset-list">
         <li><span class="ico">›</span> One-liner value proposition</li>
         <li><span class="ico">›</span> Eye-catching videos (15–30 seconds max) that clearly show the product value and quickly capture attention in cold outreach</li>
-        <li><span class="ico">›</span> Visuals or screenshots showing the product in action — e.g., how Arato Simulate looks when it's being used; before vs. after visuals</li>
+        <li><span class="ico">›</span> Visuals or screenshots showing the product in action, e.g., how Arato Simulate looks when it's being used; before vs. after visuals</li>
       </ul>
     </div>
     <div class="asset-col prd reveal">
@@ -479,10 +568,144 @@ Rony</div>
   </div>
 </section>
 
+<!-- PART 2: VALUE PITCH DECK -->
+<section id="deck" class="wrap">
+  <div class="eyebrow reveal"><span class="num">P2</span> Value Pitch Deck</div>
+  <h2 class="sec-title reveal">The Value Pitch Deck</h2>
+
+  <div class="deck-section">
+
+    <!-- SLIDE 1 -->
+    <article class="dcard reveal">
+      <div class="dnum">01 · Introduction &amp; Discovery</div>
+      <h3>Current State: How Your Team Builds and Validates AI Today</h3>
+      <p class="dsub">Before we get into how Arato can help, I'd like to understand your current setup.</p>
+      <div class="dcard-body">
+        <ul class="dbullets">
+          <li><span class="dico">?</span><div><strong>What's your AI doing today?</strong> What agents or AI features are you building or running right now?</div></li>
+          <li><span class="dico">!</span><div><strong>How do you test it today?</strong> Manual checks? A QA team? Or mostly waiting to see what happens in production?</div></li>
+          <li><span class="dico">◔</span><div><strong>What worries you most?</strong> Wrong answers, bad tone, slow releases, or compliance risk?</div></li>
+        </ul>
+      </div>
+      <div class="dnotes">
+        <h4>Speaker Notes</h4>
+        <p>"Hi, I'm Rony, BDR at Arato. Before I tell you anything about us, I'd love to understand your world. What does your AI do today, and how do you currently make sure it works well? What's the part that keeps you up at night?" Let them talk. Listen for the specific pain (accuracy, speed, compliance, scale); you'll use it on the next slide.</p>
+      </div>
+    </article>
+
+    <!-- SLIDE 2 - LIFECYCLE -->
+    <article class="dcard reveal">
+      <div class="dnum">02 · The AI Lifecycle</div>
+      <h3>Arato covers your AI from build to production</h3>
+      <p class="dsub">Three stages, one platform, so nothing falls through the cracks.</p>
+      <div class="dwho">
+        <h4>Quick note: who we are</h4>
+        <p>Arato.ai is an <b>AI Assurance platform</b>: we help teams test, monitor, and improve their AI agents with built-in governance and compliance tools, so they perform safely and reliably with real users.</p>
+      </div>
+      <div class="dcard-body cols3">
+        <div class="dlifecycle-card">
+          <div class="dico-big">◆</div>
+          <div class="dstep-label">01 · Before Launch</div>
+          <div class="dstep-name">Simulate</div>
+          <p>Create realistic test users and run thousands of conversations to catch problems before they reach real customers.</p>
+        </div>
+        <div class="dlifecycle-card">
+          <div class="dico-big">▦</div>
+          <div class="dstep-label">02 · During Development</div>
+          <div class="dstep-name">Studio</div>
+          <p>Test prompts and models side by side, run experiments, and improve your AI without breaking what already works.</p>
+        </div>
+        <div class="dlifecycle-card">
+          <div class="dico-big">◐</div>
+          <div class="dstep-label">03 · In Production</div>
+          <div class="dstep-name">Observe</div>
+          <p>Watch how your AI behaves with real users, replay conversations, and spot issues as they happen.</p>
+        </div>
+      </div>
+      <div class="dnotes">
+        <h4>Speaker Notes</h4>
+        <p>"Arato covers the full lifecycle of your AI. Before launch, Simulate stress-tests it with realistic users. During development, Studio lets you experiment safely. And once you're live, Observe shows you exactly how it behaves with real customers. One platform, the whole journey."</p>
+      </div>
+    </article>
+
+    <!-- SLIDE 3 -->
+    <article class="dcard reveal">
+      <div class="dnum">03 · The Solution &amp; Proof</div>
+      <h3>Arato: test your AI before customers do</h3>
+      <p class="dsub">One platform to build, check, and improve your AI, with real results to back it up.</p>
+      <div class="dcard-body" style="grid-template-columns:1fr">
+        <div class="dpanel">
+          <h4>Before vs. after Arato</h4>
+          <table class="ba-table">
+            <thead>
+              <tr><th>Metric</th><th>Before</th><th class="ba-after">After Arato</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ba-metric">Time to production</td>
+                <td class="ba-before">Slow, manual QA cycles</td>
+                <td class="ba-after-val">60% faster releases</td>
+              </tr>
+              <tr>
+                <td class="ba-metric">Test coverage</td>
+                <td class="ba-before">Limited, hand-picked cases</td>
+                <td class="ba-after-val">10x more test cases</td>
+              </tr>
+              <tr>
+                <td class="ba-metric">Model accuracy</td>
+                <td class="ba-before">Unverified before launch</td>
+                <td class="ba-after-val">35% higher accuracy</td>
+              </tr>
+              <tr>
+                <td class="ba-metric">Safety in production</td>
+                <td class="ba-before">Issues found by users</td>
+                <td class="ba-after-val">95% safety score</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="dnotes">
+        <h4>Speaker Notes</h4>
+        <p>Connect to what they just shared: "Based on what you told me, this is exactly the kind of thing Arato helps with. Think of it like a flight simulator for your AI: instead of waiting for real users to hit problems, we create realistic test users and run them through your AI before it goes live, and it connects to your current setup, no rebuild needed." Walk through the table: before Arato, teams rely on slow manual QA, limited test cases, unverified accuracy, and issues surfacing only once users hit them. After Arato, teams see releases 60% faster, 10x more test coverage, a 35% accuracy improvement, and a 95% live safety score.</p>
+      </div>
+    </article>
+
+    <!-- SLIDE 4 -->
+    <article class="dcard reveal">
+      <div class="dnum">04 · Next Steps</div>
+      <h3>What are our next steps?</h3>
+      <ul class="dnext">
+        <li><span class="dbadge">1</span>We build a free simulation based on your real use case</li>
+        <li><span class="dbadge">2</span>We walk through the results together, what works and what doesn't</li>
+        <li><span class="dbadge">3</span>You decide if a full pilot makes sense, no pressure, no code changes</li>
+      </ul>
+      <div class="dwho" style="margin-top:28px;margin-bottom:28px;text-align:center">
+        <h4>Trusted by teams already shipping AI with confidence</h4>
+        <div class="logo-row" style="margin-top:14px;justify-content:center">
+          <span class="logo-pill"><span class="ldot"></span> HiBob</span>
+          <span class="logo-pill"><span class="ldot"></span> Cisco</span>
+          <span class="logo-pill"><span class="ldot"></span> Wix</span>
+          <span class="logo-pill"><span class="ldot"></span> SimilarWeb</span>
+        </div>
+      </div>
+      <div class="dcta-row">
+        <a href="https://arato.ai/demo/" class="dcta" target="_blank" rel="noopener">Book a Demo →</a>
+        <a href="https://arato.ai/" class="dcta sec" target="_blank" rel="noopener">Explore Arato.ai</a>
+      </div>
+      <div class="dnotes">
+        <h4>Speaker Notes</h4>
+        <p>"Here's what happens next: we build a free simulation based on your real use case, no setup needed on your end. Then we sit down together and walk through the results, what's working and what's not. From there, it's completely up to you whether a full pilot makes sense; no pressure, no code changes." You can also point to the logos: "Teams like HiBob, Cisco, Wix, and SimilarWeb are already shipping AI with Arato's help."</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
 <footer>
   <div class="wrap foot-inner">
     <a href="#top" class="logo">Arato<sup class="mark"><b>▲</b>ı</sup></a>
-    <div class="meta">Business Development Representative — Exercise · <b>Part 1</b> · Prepared by Rony Gilboa</div>
+    <div class="meta">Business Development Representative, Home Assignment · <b>Part 1 &amp; Part 2</b> · Prepared by Rony Gilboa</div>
   </div>
 </footer>
 
